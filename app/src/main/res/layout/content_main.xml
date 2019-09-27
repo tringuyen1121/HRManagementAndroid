@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.tringuyen.example.hrmanagerandroid.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <RadioGroup
+        android:id="@+id/radioEmployeeGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@+id/radioFullTime"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <RadioButton
+            android:id="@+id/radioFullTime"
+            android:text="FullTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:textSize="@dimen/radio_txtsize"/>
+
+        <RadioButton
+            android:id="@+id/radioPartTime"
+            android:text="PartTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/radio_txtsize"/>
+
+        <RadioButton
+            android:id="@+id/radioIntern"
+            android:text="Intern"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/edittxt_left"
+            android:textSize="@dimen/radio_txtsize"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:text="Name"
+        android:layout_width="@dimen/label_txtwidth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:textStyle="bold"
+        android:padding="@dimen/tv_padding"
+        android:textSize="@dimen/label_txtsize" />
+
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/nameTextView"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="@dimen/edittxt_left"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/nameTextView"
+        android:inputType="text"
+        android:textSize="@dimen/label_txtsize"
+        android:hint="Name"/>
+
+    <TextView
+        android:id="@+id/ageTextView"
+        android:text="Age"
+        android:layout_width="@dimen/label_txtwidth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_padding"
+        android:layout_alignLeft="@+id/nameTextView"
+        android:layout_below="@+id/nameTextView"
+        android:padding="@dimen/tv_padding"
+        android:textSize="@dimen/label_txtsize"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ageTextView"
+        android:layout_marginTop="@dimen/top_padding"
+        android:layout_marginLeft="@dimen/edittxt_left"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/ageTextView"
+        android:inputType="number"
+        android:textSize="@dimen/label_txtsize"
+        android:hint="Age"/>
+
+    <TextView
+        android:id="@+id/DOBTextView"
+        android:text="DOB"
+        android:layout_width="@dimen/label_txtwidth"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_below="@+id/ageTextView"
+        android:layout_marginTop="@dimen/top_padding"
+        android:padding="@dimen/tv_padding"
+        android:textSize="@dimen/label_txtsize" />
+
+    <Button
+        android:id="@+id/btnDOBPicker"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/DOBTextView"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/edittxt_left"
+        android:text="date" />
+
+    <EditText
+        android:id="@+id/txtDOB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/DOBTextView"
+        android:layout_marginLeft="@dimen/edittxt_left"
+        android:inputType="text"
+        android:textSize="@dimen/edit_txtsize"
+        android:layout_toEndOf="@+id/DOBTextView"
+        android:layout_toLeftOf="@+id/btnDOBPicker"
+        android:layout_toStartOf="@+id/btnDOBPicker"
+        android:enabled="false"
+        android:hint="Date of Birth"/>
+
+    <TextView
+        android:id="@+id/countryTextView"
+        android:text="Country"
+        android:layout_width="@dimen/label_txtwidth"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/tv_padding"
+        android:textSize="@dimen/label_txtsize"
+        android:textStyle="bold"
+        android:layout_below="@+id/DOBTextView"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/btnCountryPicker"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/countryTextView"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/edittxt_left"
+        android:text="list" />
+
+    <EditText
+        android:id="@+id/txtCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/countryTextView"
+        android:layout_marginLeft="@dimen/edittxt_left"
+        android:inputType="text"
+        android:textSize="@dimen/edit_txtsize"
+        android:layout_toEndOf="@+id/countryTextView"
+        android:layout_toLeftOf="@+id/btnCountryPicker"
+        android:layout_toStartOf="@+id/btnCountryPicker"
+        android:hint="Country"/>
+
+    <TextView
+        android:id="@+id/salaryhoursschoolTextView"
+        android:text="Salray"
+        android:layout_width="@dimen/label_txtwidth"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:padding="@dimen/tv_padding"
+        android:textSize="@dimen/label_txtsize"
+        android:layout_below="@+id/countryTextView"
+        android:layout_alignParentStart="true"/>
+
+    <EditText
+        android:id="@+id/txtSalaryHoursSchool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/salaryhoursschoolTextView"
+        android:layout_marginLeft="@dimen/edittxt_left"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/salaryhoursschoolTextView"
+        android:textSize="@dimen/edit_txtsize"
+        android:inputType="number"
+        android:hint="Salary"/>
+
+    <TextView
+        android:id="@+id/bonusrateTextView"
+        android:text="Bonus"
+        android:layout_width="@dimen/label_txtwidth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_padding"
+        android:layout_alignLeft="@+id/salaryhoursschoolTextView"
+        android:layout_below="@+id/salaryhoursschoolTextView"
+        android:padding="@dimen/tv_padding"
+        android:textSize="@dimen/label_txtsize"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtBonusRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/bonusrateTextView"
+        android:layout_marginLeft="@dimen/edittxt_left"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/bonusrateTextView"
+        android:inputType="number"
+        android:textSize="@dimen/edit_txtsize"
+        android:hint="Bonus"/>
+
+    <TextView
+        android:id="@+id/plateTextView"
+        android:text="Plate"
+        android:layout_width="@dimen/label_txtwidth"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:padding="@dimen/tv_padding"
+        android:textSize="@dimen/label_txtsize"
+        android:layout_below="@+id/bonusrateTextView"
+        android:layout_marginTop="@dimen/top_padding"/>
+
+    <EditText
+        android:id="@+id/txtPlate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/plateTextView"
+        android:layout_marginLeft="@dimen/edittxt_left"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/plateTextView"
+        android:inputType="text"
+        android:textSize="@dimen/edit_txtsize"
+        android:hint="Vehicle Plate"/>
+
+    <TextView
+        android:id="@+id/makeTextView"
+        android:text="Make"
+        android:layout_width="@dimen/label_txtwidth"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_padding"
+        android:layout_alignLeft="@+id/plateTextView"
+        android:layout_below="@+id/plateTextView"
+        android:padding="@dimen/tv_padding"
+        android:textSize="@dimen/label_txtsize"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtMake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/makeTextView"
+        android:layout_marginLeft="@dimen/edittxt_left"
+        android:layout_alignParentRight="true"
+        android:layout_toEndOf="@+id/makeTextView"
+        android:inputType="text"
+        android:textSize="@dimen/edit_txtsize"
+        android:hint="Vehicle Make"/>
+
+    <LinearLayout
+        android:id="@+id/btnLinearLayout1"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/makeTextView"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/btnAddChange"
+            android:text="Add"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_size"
+            android:layout_weight="0.07" />
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:text="Search"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_size"
+            android:layout_weight="0.07" />
+
+        <Button
+            android:id="@+id/btnClear"
+            android:text="Clear"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_size"
+            android:layout_weight="0.07" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/btnLinearLayout2"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnLinearLayout1"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/btnCalcPayroll"
+            android:text="Calc Payroll"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_size"
+            android:layout_weight="0.07" />
+
+        <Button
+            android:id="@+id/btnCalcAge"
+            android:text="Calc Age"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_size"
+            android:layout_weight="0.07" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnEmpList"
+        android:text="Employee List"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_size"
+        android:layout_below="@+id/btnLinearLayout2"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ff0000"/>
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="2dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/tvNameAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/item_txtsize"/>
+        <TextView
+            android:id="@+id/tvDOBCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/item_txtsize"/>
+        <TextView
+            android:id="@+id/tvPayroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/item_txtsize"/>
+        <TextView
+            android:id="@+id/tvVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/item_txtsize"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btnEditEmpItem"
+            android:text="Edit"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textSize="@dimen/itembtn_txtsize"
+            android:background="#0000FF"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="5dp"/>
+
+        <Button
+            android:id="@+id/btnDeleteEmpItem"
+            android:text="Delete"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textSize="@dimen/itembtn_txtsize"
+            android:background="#FF8C00"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="5dp"/>
+    </LinearLayout>
+</LinearLayout>

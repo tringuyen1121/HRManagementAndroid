@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="label_txtsize">18sp</dimen>
+    <dimen name="edit_txtsize">15sp</dimen>
+    <dimen name="radio_txtsize">15sp</dimen>
+    <dimen name="top_padding">2dp</dimen>
+    <dimen name="label_txtwidth">85dp</dimen>
+    <dimen name="tv_padding">7dp</dimen>
+    <dimen name="edittxt_left">10dp</dimen>
+    <dimen name="item_txtsize">15sp</dimen>
+    <dimen name="itembtn_txtsize">10sp</dimen>
+    <dimen name="button_size">42dp</dimen>
+</resources>
