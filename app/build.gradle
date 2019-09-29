@@ -33,11 +33,13 @@ android {
             dimension "version"
             applicationIdSuffix ".gapps"
             versionNameSuffix "-gapps"
+            resValue "string", "app_name", "Gapps Hub"
         }
         happeo {
             dimension "version"
             applicationIdSuffix ".happeo"
             versionNameSuffix "-happeo"
+            resValue "string", "app_name", "Happeo"
         }
     }
 
