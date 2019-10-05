@@ -15,10 +15,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        debug {
-            applicationIdSuffix ".debug"
-            debuggable true
-        }
         staging {
             initWith debug
             manifestPlaceholders = [hostName:"staging.happeo.com"]
@@ -27,6 +23,10 @@ android {
     }
     flavorDimensions "version"
     productFlavors {
+        happeo {
+            dimension "version"
+            resValue "string", "app_name", "Happeo"
+        }
         gapps {
             // Assigns this product flavor to the "version" flavor dimension.
             // This property is optional if you are using only one dimension.
@@ -35,14 +35,7 @@ android {
             versionNameSuffix "-gapps"
             resValue "string", "app_name", "Gapps Hub"
         }
-        happeo {
-            dimension "version"
-            applicationIdSuffix ".happeo"
-            versionNameSuffix "-happeo"
-            resValue "string", "app_name", "Happeo"
-        }
     }
-
 }
 
 dependencies {
