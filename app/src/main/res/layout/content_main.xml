@@ -164,7 +164,7 @@
 
     <TextView
         android:id="@+id/salaryhoursschoolTextView"
-        android:text="Salray"
+        android:text="Salary"
         android:layout_width="@dimen/label_txtwidth"
         android:layout_height="wrap_content"
         android:textStyle="bold"
