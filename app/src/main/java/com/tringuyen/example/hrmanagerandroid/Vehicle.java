@@ -19,8 +19,8 @@ public class Vehicle implements IDisplayable {
 
     @Override
     public void displayData() {
-        Log.d("Vehicle","Vichile Make: "+this.make);
-        Log.d("Vehicle","Vichile Plate: "+this.plateNumber);
+        Log.d("Vehicle","Vehicle Make: "+this.make);
+        Log.d("Vehicle","Vehicle Plate: "+this.plateNumber);
     }
 
 }

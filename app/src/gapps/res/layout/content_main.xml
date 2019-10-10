@@ -37,6 +37,14 @@
             android:layout_height="wrap_content"
             android:textSize="@dimen/radio_txtsize"/>
 
+        <RadioButton
+            android:id="@+id/radioIntern"
+            android:text="Intern"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/edittxt_left"
+            android:textSize="@dimen/radio_txtsize"/>
+
     </RadioGroup>
 
     <TextView

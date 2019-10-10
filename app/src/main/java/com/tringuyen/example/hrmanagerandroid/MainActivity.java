@@ -108,6 +108,15 @@ public class MainActivity extends AppCompatActivity {
                     changeEditState(false);
                 }
                 currentEmployee = null;
+
+                if (BuildConfig.FLAVOR.equals("gapps") && i == getIternRadioId()) {
+                    salaryhoursschoolTextView.setText("School");
+                    txtSalaryHoursSchool.setInputType(InputType.TYPE_CLASS_TEXT);
+                    bonusrateTextView.setVisibility(View.GONE);
+                    txtBonusRate.setVisibility(View.GONE);
+                    txtSalaryHoursSchool.setHint("University or College");
+                }
+
                 switch (i) {
                     case R.id.radioFullTime:
                         salaryhoursschoolTextView.setText("Salary");
@@ -126,13 +135,6 @@ public class MainActivity extends AppCompatActivity {
                         txtBonusRate.setVisibility(View.VISIBLE);
                         txtSalaryHoursSchool.setHint("Hours");
                         txtBonusRate.setHint("Rate");
-                        break;
-                    case R.id.radioIntern:
-                        salaryhoursschoolTextView.setText("School");
-                        txtSalaryHoursSchool.setInputType(InputType.TYPE_CLASS_TEXT);
-                        bonusrateTextView.setVisibility(View.GONE);
-                        txtBonusRate.setVisibility(View.GONE);
-                        txtSalaryHoursSchool.setHint("University or College");
                         break;
                 }
             }
@@ -273,7 +275,24 @@ public class MainActivity extends AppCompatActivity {
                             && (txtMake.getText().toString()!=null && !txtMake.getText().toString().equals(""))){
                         v1 = new Vehicle(txtPlate.getText().toString(), txtMake.getText().toString());
                     }
-                    if (radioEmployeeGroup.getCheckedRadioButtonId() == R.id.radioFullTime){
+
+                    if (BuildConfig.FLAVOR.equals("gapps") && radioEmployeeGroup.getCheckedRadioButtonId() == getIternRadioId()) {
+                        // Intern
+                        if(!isValidRecord(2)) return;
+
+                        Intern it = new Intern(txtName.getText().toString(),
+                                Integer.parseInt(txtAge.getText().toString()),
+                                txtDOB.getText().toString(),
+                                txtCountry.getText().toString(),
+                                txtSalaryHoursSchool.getText().toString(),
+                                v1);
+
+                        arrEmployee.add(it);
+                        currentEmployee = it;
+                        changeEditState(true);
+
+                        msg = "Intern Employee Record is added";
+                    } else if (radioEmployeeGroup.getCheckedRadioButtonId() == R.id.radioFullTime){
                         // FullTime
                         if(!isValidRecord(0)) return;
 
@@ -307,22 +326,6 @@ public class MainActivity extends AppCompatActivity {
                         changeEditState(true);
 
                         msg = "PartTime Employee Record is added";
-                    } else if (radioEmployeeGroup.getCheckedRadioButtonId() == R.id.radioIntern){
-                        // Intern
-                        if(!isValidRecord(2)) return;
-
-                        Intern it = new Intern(txtName.getText().toString(),
-                                Integer.parseInt(txtAge.getText().toString()),
-                                txtDOB.getText().toString(),
-                                txtCountry.getText().toString(),
-                                txtSalaryHoursSchool.getText().toString(),
-                                v1);
-
-                        arrEmployee.add(it);
-                        currentEmployee = it;
-                        changeEditState(true);
-
-                        msg = "Intern Employee Record is added";
                     }
                 }
                 if(!msg.equals(""))
@@ -516,8 +519,8 @@ public class MainActivity extends AppCompatActivity {
             radioEmployeeGroup.check(R.id.radioPartTime);
             txtSalaryHoursSchool.setText(String.valueOf(((PartTime) e).hoursWorked));
             txtBonusRate.setText(String.valueOf(((PartTime) e).rate));
-        } else if (e instanceof Intern) {
-            radioEmployeeGroup.check(R.id.radioIntern);
+        } else if (BuildConfig.FLAVOR.equals("gapps") && e instanceof Intern) {
+            radioEmployeeGroup.check(getIternRadioId());
             txtSalaryHoursSchool.setText(((Intern) e).collegeName);
         }
 
@@ -531,6 +534,10 @@ public class MainActivity extends AppCompatActivity {
             txtPlate.setText(e.vehicle_owned.plateNumber);
             txtMake.setText(e.vehicle_owned.make);
         }
+    }
+
+    private int getIternRadioId() {
+        return getResources().getIdentifier("radioIntern", "id", getPackageName());
     }
 
     private void changeEditState(Boolean on) {
